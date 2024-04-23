@@ -849,6 +849,22 @@ html.menu-toggle {
     position: relative
 }
 
+.sec_head_contact {
+    margin-bottom: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.sec_head_contact h2 {
+    color: #000;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 5px;
+    position: relative;
+    display: inline-block;
+}
+
 .sec_head h2 {
     color: #000;
     font-weight: 700;
@@ -1364,6 +1380,137 @@ html.menu-toggle {
     justify-content: space-between;
 }
 
+/* contact us section */
+.section_contact_feed{
+    /* padding: 30px 0; */
+    position: relative;
+   
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    padding-bottom: 30px;
+}
+
+.contact_border{
+    /* padding: 10px !important; */
+    /* border: 1px solid rgb(202, 201, 201) !important; */
+    border-radius: 30px;
+    background: linear-gradient(90deg, rgba(239,239,239,1) 0%, rgba(247,247,247,1) 90%);
+    border-radius: 10px !important;
+    padding-top: 2.5rem; /* 30px / 16px = 1.875rem */
+padding-left: 2.5rem; /* 30px / 16px = 1.875rem */
+padding-right: 2.5rem; /* 30px / 16px = 1.875rem */
+padding-bottom: 2.5rem; /* 30px / 16px = 1.875rem */
+
+    /* background: linear-gradient(90deg, rgba(239,239,239,1) 0%, rgba(247,247,247,1) 90%); */
+    -webkit-border-radius: 10px !important;
+    -moz-border-radius: 10px !important;
+    -ms-border-radius: 10px !important;
+    -o-border-radius: 10px !important;
+    margin-left: 120px;
+    margin-right: 120px;
+}
+
+@media only screen and (max-width: 768px){
+    .contact_border {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+
+/*  */
+.demo_button{
+    display: flex;
+    justify-content: center;
+    background-color: #347E79;
+    color: white;
+    width: 25%;
+    margin-top: 10px;
+    padding: 9px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+    margin-top: 5px;
+}
+
+.demo_button:hover{
+    color: white;
+}
+
+
+.styled-input.wide { 
+    /* width: 650px; */
+    max-width: 100%;
+}
+.styled-input {
+    /* float: left; */
+    width: 100%;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:100%;
+    }
+}
+
+.styled-input input{
+    padding: 10px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid rgb(184, 183, 183);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.styled-input select{
+    padding: 10px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: rgb(136, 135, 135);
+    border-radius: 10px;
+    border: 1px solid rgb(184, 183, 183);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.contact-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.input-container {
+    /* width: 650px; */
+    max-width: 100%;
+    margin: 20px auto 25px auto;
+}
+
+.styled-input label {
+    color: #999;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
 /*section_start_us*/
 
 .section_start_us {
@@ -1797,12 +1944,13 @@ footer {
 .cbx p {
     margin: 0 5px;
     font-weight: 600;
-    font-size: 
+    /* font-size:  */
 }
 .inp-cbx:checked + .cbx span:first-child {
   border-color: var(--main-color);
   background: var(--main-color);
   animation: check 0.6s ease;
+  -webkit-animation: check 0.6s ease;
 }
 .inp-cbx:checked + .cbx span:first-child svg {
   stroke-dashoffset: 0;
