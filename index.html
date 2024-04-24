@@ -1007,18 +1007,19 @@
 						<div class="col-md-6">
 							<label>Name</label>
 							<div class="col-xs-12">
+							
 								<div class="styled-input wide">
-								   <input type="text" placeholder="Nasser Alotaibi" required />
-								   <!-- <label>Name</label>  -->
+								   <input type="text" id="demo-form-name"  placeholder="Nasser Alotaibi" required />
+							
 								</div>
 							 </div>
 							
 						</div>
 						<div class="col-md-6">
-							<label for="phone">Phone Number</label>
+							<label for="demo-form-phone">Phone Number</label>
 							<div class="col-xs-12">
 								<div class="styled-input">
-									<select id="phone" name="phone" required>
+									<select  id="demo-form-phone" name="phone" required>
 										<option value="+966505000000" selected disabled>+966505000000</option>
 										<option value="1234567890">1234567890</option>
 										<option value="2345678901">2345678901</option>
@@ -1033,7 +1034,7 @@
 							<label>Company Name</label>
 							<div class="col-xs-12">
 								<div class="styled-input">
-								   <input type="text" placeholder="Nextunicorn LLC" required />
+								   <input type="text"  id="demo-form-company" placeholder="Nextunicorn LLC" required />
 								   
 								</div>
 							 </div>
@@ -1043,7 +1044,7 @@
 							<label>Position</label>
 							<div class="col-xs-12">
 								<div class="styled-input">
-								   <input type="text" placeholder="CTO" required />
+								   <input type="text" id="demo-form-position"  placeholder="CTO" required />
 								   
 								</div>
 							 </div>
@@ -1054,7 +1055,7 @@
 							<label>Company Website Url</label>
 							<div class="col-xs-12">
 								<div class="styled-input">
-								   <input type="text" placeholder="www.nextunicorn.com" required />
+								   <input type="text"  id="demo-form-url"  placeholder="www.nextunicorn.com" required />
 								   
 								</div>
 							 </div>
@@ -1065,7 +1066,7 @@
 							<label>Business email</label>
 							<div class="col-xs-12">
 								<div class="styled-input">
-								   <input type="text" placeholder="Nasser@nextunicorn.com" required />
+								   <input type="text" id="demo-form-email"  placeholder="Nasser@nextunicorn.com" required />
 								   
 								</div>
 							 </div>
@@ -1597,10 +1598,12 @@
 			})
 		</script>
 
+		<!-- Here is my subscribeLetterScript -->
 		<script>
 			$(document).ready(function () {
 				$('#subscribe').on('click', function () {
 					var email = $('#email-subscribe').val()
+
 					var request = {
 						email: email,
 					}
@@ -1611,6 +1614,64 @@
 				})
 			})
 		</script>
+
+		<!-- Here is the code for sending Form Data using "Get A Free Demo" button -->
+		<script>
+			$(document).ready(function () {
+				$('.demo_button').on('click', function (event) {
+					event.preventDefault(); 
+		
+				
+					var name = $('#demo-form-name').val();
+					var phone = $('#demo-form-phone').val();
+					var companyName = $('#demo-form-company').val();
+					var position = $('#demo-form-position').val();
+					var companyUrl = $('#demo-form-url').val();
+					var businessEmail = $('#demo-form-email').val();
+
+				
+					var request = {
+						name: name,
+						phone: phone,
+						companyName: companyName,
+						position: position,
+						companyUrl: companyUrl,
+						businessEmail: businessEmail
+					};
+		
+					// AJAX call to the server with the collected data
+					ajaxCallJson('/request-demo', JSON.stringify(request), 'POST');
+		
+					// Optionally clear the form or show a confirmation message
+					$('#con input[type="text"]').val('');
+					$('#demo-form-name').val('');
+					$('#demo-form-phone').val('');
+					$('#demo-form-company').val('');
+					$('#demo-form-position').val('');
+					$('#demo-form-url').val('');
+					$('#demo-form-email').val('');
+					alert('Demo request sent successfully!');
+				});
+			});
+		
+			function ajaxCallJson(url, data, method) {
+				$.ajax({
+					url: url,
+					type: method,
+					contentType: 'application/json',
+					data: data,
+					success: function(response) {
+						console.log('Success:', response);
+					},
+					error: function(xhr, status, error) {
+						console.error('Error:', xhr.responseText);
+					}
+				});
+			}
+		</script>
+		
+
+
 
 		<script>
 			$(document).ready(function () {
