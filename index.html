@@ -1019,12 +1019,8 @@
 							<label for="demo-form-phone">Phone Number</label>
 							<div class="col-xs-12">
 								<div class="styled-input">
-									<select  id="demo-form-phone" name="phone" required>
-										<option value="+966505000000" selected disabled>+966505000000</option>
-										<option value="1234567890">1234567890</option>
-										<option value="2345678901">2345678901</option>
+										<input type='number' id="demo-form-phon"  placeholder="+966505000000" required />
 										<!-- Add more options as needed -->
-									</select>
 								</div>
 							</div>
 						</div>
@@ -1083,10 +1079,9 @@
 							 </div>
 							
 						</div> -->
-						<div class=" col-md-12 d-flex justify-content-center">
+						<div class=" col-md-12 d-flex justify-content-center" id="subscribe_form">
 							<a
-												class="demo_button"
-												
+												class="demo_button"	
 												><span>Get a Free Demo</span></a
 											>
 										</div>
@@ -1103,7 +1098,7 @@
 			<footer id="footer">
 				<div class="top-footer">
 					<div class="container">
-						<!-- <div class="subscribe">
+						<div class="subscribe">
 							<div class="sec-right wow fadeInUp">
 								<figure>
 									<img
@@ -1140,7 +1135,7 @@
 									</button>
 								</div>
 							</div>
-						</div> -->
+						</div>
 						<div class="row">
 							<div class="col-md-6">
 								<a
@@ -1617,41 +1612,42 @@
 
 		<!-- Here is the code for sending Form Data using "Get A Free Demo" button -->
 		<script>
-			$(document).ready(function () {
-				$('.demo_button').on('click', function (event) {
-					event.preventDefault(); 
-		
-				
-					var name = $('#demo-form-name').val();
-					var phone = $('#demo-form-phone').val();
-					var companyName = $('#demo-form-company').val();
-					var position = $('#demo-form-position').val();
-					var companyUrl = $('#demo-form-url').val();
-					var businessEmail = $('#demo-form-email').val();
+	$(document).ready(function () {
+    $('#subscribe_form').on('click', function (event) {
+        event.preventDefault();
 
-				
-					var request = {
-						name: name,
-						phone: phone,
-						companyName: companyName,
-						position: position,
-						companyUrl: companyUrl,
-						businessEmail: businessEmail
-					};
-		
-					// AJAX call to the server with the collected data
-					ajaxCallJson('https://app.krowdi.ai/', JSON.stringify(request), 'POST');
-					// Optionally clear the form or show a confirmation message
-					$('#con input[type="text"]').val('');
-					$('#demo-form-name').val('');
-					$('#demo-form-phone').val('');
-					$('#demo-form-company').val('');
-					$('#demo-form-position').val('');
-					$('#demo-form-url').val('');
-					$('#demo-form-email').val('');
-					alert('Demo request sent successfully!');
-				});
-			});
+        var name = $('#demo-form-name').val();
+        var phone = $('#demo-form-phone').val();
+        var companyName = $('#demo-form-company').val();
+        var position = $('#demo-form-position').val();
+        var companyUrl = $('#demo-form-url').val();
+        var businessEmail = $('#demo-form-email').val();
+
+        var baseurl = 'YOUR_BASE_URL'; // Replace 'YOUR_BASE_URL' with your actual base URL
+
+        var request = {
+            name: name,
+            phone: phone,
+            companyName: companyName,
+            position: position,
+            companyUrl: companyUrl,
+            businessEmail: businessEmail
+        };
+
+        // AJAX call to the server with the collected data
+        ajaxCallJson('https://fu16gr4a77.execute-api.us-east-1.amazonaws.com/dev/subscribe', JSON.stringify(request), 'POST');
+
+        // Optionally clear the form or show a confirmation message
+        $('#con input[type="text"]').val('');
+        $('#demo-form-name').val('');
+        $('#demo-form-phone').val('');
+        $('#demo-form-company').val('');
+        $('#demo-form-position').val('');
+        $('#demo-form-url').val('');
+        $('#demo-form-email').val('');
+    });
+});
+
 		
 			function ajaxCallJson(url, data, method) {
 				$.ajax({
