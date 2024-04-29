@@ -735,7 +735,7 @@
 						<a class="demo_button"><span>Get a Free Demo</span></a>
 					</div>
 
-					<h4 id="subscribe-form-done" style="display: none">
+					<h4 id="demo-form-done" style="display: none">
 						Thank you for requesting a free demo!
 						We've received your information and one of our team members will be in touch shortly to schedule
 						your demo.
@@ -1185,7 +1185,7 @@
 				};
 
 				// AJAX call to the server with the collected data
-				ajaxCallJson('https://fu16gr4a77.execute-api.us-east-1.amazonaws.com/dev/subscribe', JSON.stringify(request), 'POST');
+				ajaxCallJson('https://vazcl55qre.execute-api.us-east-1.amazonaws.com/dev/krowdi_schedule_demo', JSON.stringify(request), 'POST');
 
 				// Optionally clear the form or show a confirmation message
 				$('#con input[type="text"]').val('');
@@ -1207,7 +1207,7 @@
 				data: data,
 				success: function (response) {
 					console.log('Success:', response);
-					$('#subscribe-form-done').show();
+					$('#demo-form-done').show();
 				},
 				error: function (xhr, status, error) {
 					console.error('Error:', xhr.responseText);
