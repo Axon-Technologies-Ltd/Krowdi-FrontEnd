@@ -1548,6 +1548,7 @@ html.menu-toggle {
     position: relative;
 
     border-radius: 50px;
+    margin-bottom: 50px;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     -ms-border-radius: 50px;
@@ -1603,7 +1604,7 @@ html.menu-toggle {
     margin-top: 5px;
 }
 
-#subscribe-done {
+#subscribe-form-done {
     color: #347d79;
     font-size: 15px;
     padding: 15px;

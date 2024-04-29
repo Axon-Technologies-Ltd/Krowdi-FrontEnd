@@ -735,7 +735,7 @@
 						<a class="demo_button"><span>Get a Free Demo</span></a>
 					</div>
 
-					<h4 id="subscribe-done">
+					<h4 id="subscribe-form-done" style="display: none">
 						Thank you for requesting a free demo!
 						We've received your information and one of our team members will be in touch shortly to schedule
 						your demo.
@@ -1207,7 +1207,7 @@
 				data: data,
 				success: function (response) {
 					console.log('Success:', response);
-					$('#subscribe-done').show();
+					$('#subscribe-form-done').show();
 				},
 				error: function (xhr, status, error) {
 					console.error('Error:', xhr.responseText);
