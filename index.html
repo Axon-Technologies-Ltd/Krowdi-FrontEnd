@@ -48,13 +48,13 @@
 						<a class="page-scroll" href="#works">Be Our Client</a>
 					</li>
 					<li>
-						<a class="page-scroll" href="">Careers</a>
-					</li>
+                        <a class="page-scroll" href="#career-section">Careers</a>
+                    </li>
 					<li>
 						<a class="page-scroll" href="">Contact us</a>
 					</li>
 					<li>
-						<a data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign In</span></a>
+						<a href="https://app.krowdi.ai/login"><span>Sign In</span></a>
 					</li>
 				</ul>
 			</div>
@@ -85,13 +85,13 @@
 						<a class="page-scroll" href="#works">Be Our Client</a>
 					</li>
 					<li>
-						<a class="page-scroll" href="">Careers</a>
-					</li>
+                        <a class="page-scroll" href="#career-section">Careers</a>
+                    </li>
 					<li>
 						<a class="page-scroll" href="#contact">Contact us</a>
 					</li>
 					<li class="btn-sign">
-						<a data-bs-toggle="modal" data-bs-target="#loginModal"><span>Sign in</span></a>
+						<a href="https://app.krowdi.ai/login"><span>Sign in</span></a>
 					</li>
 				</ul>
 				<button type="button" class="hamburger is-closed">
@@ -576,6 +576,19 @@
 				</div>
 			</div>
 		</div>
+
+	<!--section_career-->
+
+	<section>
+		<div id="career-section">
+			<h2 id="career-heading">Career</h2>
+			<p>Opportunity to work on cutting-edge AI projects focused on Arabic and MENA cultural data.
+				Collaborative and inclusive work environment that values diversity and innovation.
+				Continuous learning and professional development opportunities to enhance your skills and expertise.</p>
+				<a href="https://forms.gle/T5Egvx6ZH87ycrDk6" id="career-button"><span>Apply Now</span></a>
+		</div>
+	</section>
+
 		<!--sec_our_promise-->
 
 		<section class="section_twitter_feed">
@@ -646,6 +659,7 @@
 				</div>
 			</div>
 		</section>
+
 		<!--section_twitter-->
 
 		<section id="con" class="section_contact_feed">
@@ -731,16 +745,16 @@
 							
 						</div> -->
 
-					<div class=" col-md-12 d-flex justify-content-center" id="demo_form">
+					<div class="col-md-12 d-flex justify-content-center" id="demo_form">
 						<a class="demo_button"><span>Get a Free Demo</span></a>
 					</div>
 
-					<h4 id="demo-form-done" style="display: none">
+					<h4 id="demo-form-done" style="display: none; padding-top: 10px; font-size: 13px; color: #347E79;">
 						Thank you for requesting a free demo!
 						We've received your information and one of our team members will be in touch shortly to schedule
 						your demo.
 						We look forward to showing you what we can do!
-					</h4>
+					</p>
 				</div>
 
 
@@ -773,7 +787,7 @@
 									<input type="email" class="form-control" placeholder="Email" id="email-subscribe" />
 								</div>
 								<button class="btn-site" id="subscribe">
-									<span>Subsribe</span>
+									<span>Subscribe</span>
 								</button>
 							</div>
 						</div>
@@ -1152,7 +1166,7 @@
 				var request = {
 					email: email,
 				}
-				ajaxCallJson('/subscribe', JSON.stringify(request), 'POST')
+				ajaxCallJson('https://fu16gr4a77.execute-api.us-east-1.amazonaws.com/dev/subscribe', JSON.stringify(request), 'POST')
 				$('#email-subscribe').val('')
 				$('#subscribe-now').hide()
 				$('#subscribe-done').show()
@@ -1185,7 +1199,7 @@
 				};
 
 				// AJAX call to the server with the collected data
-				ajaxCallJson('https://vazcl55qre.execute-api.us-east-1.amazonaws.com/dev/krowdi_schedule_demo', JSON.stringify(request), 'POST');
+				ajaxCallJson('https://fu16gr4a77.execute-api.us-east-1.amazonaws.com/dev/krowdi_schedule_demo', JSON.stringify(request), 'POST');
 
 				// Optionally clear the form or show a confirmation message
 				$('#con input[type="text"]').val('');
@@ -1195,6 +1209,7 @@
 				$('#demo-form-position').val('');
 				$('#demo-form-url').val('');
 				$('#demo-form-email').val('');
+				$('#demo-form-done').show();
 			});
 		});
 
@@ -1207,7 +1222,7 @@
 				data: data,
 				success: function (response) {
 					console.log('Success:', response);
-					$('#demo-form-done').show();
+					// $('#demo-form-done').show();
 				},
 				error: function (xhr, status, error) {
 					console.error('Error:', xhr.responseText);
@@ -1247,7 +1262,7 @@
 
 				if (response.message && response.message === 'Email Sent') {
 					alert(
-						'Please check your email address and confirm your registration'
+						"Please check your email address and confirm your registration"
 					)
 				} else if (
 					!response.body &&
