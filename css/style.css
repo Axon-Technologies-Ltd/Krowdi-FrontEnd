@@ -1306,6 +1306,29 @@ html.menu-toggle {
     color: #fff;
 }
 
+/* Careers */
+
+#career-section {
+    padding: 50px;
+    margin: 10px 100px;
+    border-radius: 40px;
+    background: linear-gradient(300deg, rgba(235,255,254,0) 10%, rgba(114,184,171,.5) 60%);
+    text-align: center;
+  }
+  
+ 
+  #career-button {
+    background-color: #3F8882;
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 20px;
+  }
+
+
+
 /*section_twitter*/
 
 .section_twitter_feed {
@@ -2135,4 +2158,6 @@ footer {
    -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
 }
+
+
 
